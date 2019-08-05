@@ -1,0 +1,43 @@
+.text_input{
+    width: 8cm;
+    margin-left: 1cm;
+    margin-top: 0.5cm;
+}
+table{
+    width: 17.5cm;
+}
+table tr td:first-child{
+    width: 2cm;
+    text-align: right;
+}
+table tr td:last-child{
+    box-sizing:border-box;
+}
+table tr:last-child td:last-child input{
+    width: 5cm;
+    margin-left: 0.6cm;
+    margin-top: 0.2cm;
+}
+.picture{
+    height:40px;
+    width:2.8cm;
+    vertical-align: middle;
+}
+.submit_self{
+    margin-top: 0.6cm;
+    margin-right: 0.6cm;
+}
+.text{
+    font-size: 20px;
+}
+.form_message{
+    color: red;
+    margin-right:10cm;
+    font-size:20px;
+}
+#username_err{
+    color: red;
+}
+#password_err{
+    color: red;
+}

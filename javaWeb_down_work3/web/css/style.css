@@ -1,0 +1,18 @@
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mt-100 {
+    margin-top: 100px;
+}
+
+.mt-200 {
+    margin-top: 200px;
+}
+
+.form input[type='text'],input[type='password'] {
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #A6A6A6;
+}

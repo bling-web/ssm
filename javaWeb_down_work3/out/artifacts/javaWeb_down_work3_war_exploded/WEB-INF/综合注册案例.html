@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <link href="综合注册案例.css" rel="stylesheet">
+    <script>
+        //1.给from注册一个事件
+        window.onload=function () {
+            //获取from
+            document.getElementById("注册表").onsubmit=function () {
+                return check_username()&&check_password();
+            }
+            //用户名验证
+            function check_username(){
+                var text=document.getElementsByName("username")[0].value;
+                //定义正则表达式
+                var str=/^\w{6,20}$/
+                var result=str.test(text);
+                if(result){
+                    var message_obj=document.getElementById("username_message");
+                    message_obj.innerHTML="<img src='0ea151a9a4c05798232f094407bcb34e_26198_142612001490_2.jpg' width='20px' height='20px'>";
+                }
+                else{
+                    var message_obj=document.getElementById("username_message")
+                    message_obj.innerHTML="!用户名不正确"
+                }
+                return result;
+            }
+        }
+        //密码验证
+        function check_password(){
+            var text=document.getElementsByName("password")[0].value;
+            //定义正则表达式
+            var str=/^\d{6,20}$/
+            var result=str.test(text);
+            if(result){
+                var message_obj=document.getElementById("password_meaasge");
+                message_obj.innerHTML="<img  src='0ea151a9a4c05798232f094407bcb34e_26198_142612001490_2.jpg' width='20px' height='20px'>";
+            }
+            else{
+                var message_obj=document.getElementById("password_meaasge")
+                message_obj.innerHTML="!密码不正确"
+            }
+            return result;
+        }
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <div class="register">
+        <div class="left">
+            <p>
+                新用户注册
+            </p>
+            <p>
+                USER ERGISTE
+            </p>
+        </div>
+        <div class="center">
+            <form id="注册表" name="注册表" method="get" action="">
+                <table  cellspacing="0">
+                    <tr>
+                        <td>
+                            用户名:
+                        </td>
+                        <td>
+                            <input class="center_common"type="text" name="username" placeholder="请输入用户名">
+                            <span id="username_message" ></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                         密码:
+                        </td>
+                        <td>
+                            <input class="center_common" type="password" name="password" placeholder="请输入密码">
+                            <span id="password_meaasge">
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            邮箱:
+                        </td>
+                        <td>
+                            <input class="center_common" type="email" name="email" placeholder="请输入邮箱">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                             真实姓名:
+                        </td>
+                        <td>
+                            <input class="center_common" type="text" name="real_name" placeholder="请输入你的真实姓名">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            手机号:
+                        </td>
+                        <td>
+                            <input class="center_common" type="quantity" name="phone" placeholder="请输入你的手机号" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            性别:
+                        </td>
+                        <td>
+                            <font>男:</font>
+                            <input type="radio" checked name="gender" value="1" >
+                            <font>女:</font>
+                            <input type="radio" name="gender" value="2">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            出生日期:
+                        </td>
+                        <td>
+                            <input class="center_common" type="date" name="born_time" placeholder="请输入你的真实姓名">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                             验证码:
+                        </td>
+                        <td>
+                            <input  class="center_reg" type="text" name="identifying_code">
+                            <img  id="idenfy_img"src="https://passport.360.cn/captcha.php?m=create&app=i360&scene=strictreg&userip=&level=default&sign=5a63a7&r=1553214903&border=none&_=1553215228982">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" >
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="right">
+            <p>已有账号?<a href="#" >立即注册</a></p>
+        </div>
+    </div>
+
+</body>
+</html>

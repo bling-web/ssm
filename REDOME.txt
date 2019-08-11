@@ -1,0 +1,2 @@
+# web-service
+这是一个web端的简单应用,采用mysql+tomcat+jsp+idea编写而成,完成了单点登录和对数据库中信息的增删查改功能,并且具有友好的页面

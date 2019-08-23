@@ -1,0 +1,11 @@
+/*对表格的所有列进行格式控制*/
+
+#picture{
+    width:100px;
+    height:130px;
+}
+#table1,#table2,#table3,#table4,#table5,#table6,#table7{
+    padding-top: 55px;
+    /*margin-top: auto;*/
+
+}

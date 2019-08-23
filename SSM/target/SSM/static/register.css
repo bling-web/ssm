@@ -1,0 +1,116 @@
+/*进行整体设置消除有的地方有空格的情况*/
+* {
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+body{
+    background: url("bg.jpg");
+}
+/*对中间整个大空白区域的设置*/
+.register{
+    border: 2px solid #c1fffc;
+    background-color: rgba(66, 226, 254, 0.38);
+    width: 22.5cm;
+    height: 430px;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 3cm;
+
+}
+/*设置左边盒子*/
+.left{
+    /*border:1px solid red;*/
+    width:160px;
+    height:40px;
+    float:left;
+    margin-top:5px;
+    margin-left: 20px;
+}
+/*设置中间盒子*/
+.center{
+    /*border:1px solid red;*/
+    width:530px;
+    height:300px;
+    float:left;
+    /*margin-left:15px;*/
+    margin-top:0.3cm;
+}
+/*右边盒子*/
+.right{
+    /*border:1px solid red;*/
+    float:right;
+    /*margin-bottom: 270px;*/
+
+}
+/*设置左边盒子*/
+.left p:first-child{
+    font-size:20px;
+    color:yellow;
+}
+.left p:last-child {
+    font-size: 20px;
+    color: #D3D3D3;
+}
+/*设置右边盒子*/
+.right p a:link{
+    color:pink;
+
+}
+.right p {
+    font-size:13px;
+    margin:0.2cm;
+}
+/*设置表格第一列*/
+table tr td:nth-child(1)  {
+    text-align: right;
+    font-size:15px;
+    height:40px;
+    width:2cm;
+}
+/*第二列*/
+table tr td:nth-child(2)  {
+    padding-left:1cm;
+    text-align: left;
+
+}
+/*设置输入框的大小和圆角效果*/
+.center_common{
+    width:6cm;
+    height:0.8cm;
+    border-radius: 5px;
+    padding-left:0.5cm;
+
+}
+/*缩小验证码边框*/
+.center_reg{
+    width:3cm;
+    height:0.8cm;
+    border-radius: 5px;
+}
+/*设置图片大小,第一行是水平居中设置*/
+#idenfy_img{
+    vertical-align: middle;
+    width:2.5cm;
+    height:0.8cm;
+}
+/*设置提交按钮框*/
+.sub{
+    height: 1cm;
+    width: 3cm;
+    background-color: yellow;
+    margin-right:3cm;
+    border:1px solid yellow;
+    border-radius: 5px;
+}
+span{
+    color: red;
+    font-size: medium;
+}
+font{
+    font-size:15px;
+}
+#username_message,#password_meaasge{
+    color:red;
+}
+

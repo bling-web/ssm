@@ -74,7 +74,12 @@
 </head>
 <body>
     <div class="register">
-        <form action="/ssm/User/addUser" class="form" method="post" enctype="multipart/form-data">
+        <c:if test="${!empty update}">
+            <form action="/ssm/User/updateUser?id=${user.id}" class="form" method="post" enctype="multipart/form-data">
+        </c:if>
+        <c:if test="${empty update}">
+            <form action="/ssm/User/addUser" class="form" method="post" enctype="multipart/form-data">
+        </c:if>
         <div class="left">
             <div >
                 <a href="#" >上传头像</a>

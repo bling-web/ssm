@@ -10,6 +10,8 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
+
+    private boolean flag;
     @Resource
     private UserMapper userMapper;
     @Override
@@ -26,15 +28,19 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean verify(User user) {
         String password = user.getPassword();
-        User dbuser = userMapper.verify(password);
-        if(dbuser==null)
-            return false;
-        if(dbuser.getUsername().equals(user.getUsername())||
-           dbuser.getPhone().equals(user.getUsername())||
-           dbuser.getEmail().equals(user.getUsername())){
-            return true;
-        }else
-            return false;
+        List<User> list = userMapper.verify(password);
+        for (User u : list) {
+            if(u!=null){
+                if(u.getUsername().equals(user.getUsername())||
+                        u.getPhone().equals(user.getUsername())||
+                        u.getEmail().equals(user.getUsername())){
+                    flag=true;
+                    break;
+                }
+            }
+        }
+        return flag;
+
     }
 
     @Override
@@ -49,6 +55,12 @@ public class UserServiceImpl implements UserService {
             }
         }
         return true;
+    }
+
+    @Override
+    public void update(User user) {
+        //调用mapper层完成更新功能
+        userMapper.update(user);
     }
 
     @Override

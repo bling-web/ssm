@@ -4,6 +4,7 @@ import com.cc.springMVC.Domain.User;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public interface UserMapper {
     void insert(User user);
 
     @Select("select username,phone,email from user where password=#{password}")
-    User verify(String password);
+    List<User> verify(String password);
 
 
     @Select("select username,phone,email from user")
@@ -28,4 +29,7 @@ public interface UserMapper {
 
     @Select("select * from user where id=#{id}")
     User findById(String id);
+
+    @Update("update user set picture=#{picture},username=#{username},name=#{name},phone=#{phone},email=#{email},password=#{password},sex=#{sex},date=#{date} where id=#{id}")
+    void update(User user);
 }

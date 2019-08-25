@@ -19,4 +19,6 @@ public interface UserService {
     void delete(String id);
 
     User findById(String id);
+
+    void update(User user);
 }

@@ -11,6 +11,13 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!--//配置springMVC拦截器,拦截没有登录就访问页面的请求-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/User/**"/>
+            <bean class="com.cc.springMVC.Controller.Intercepte"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
     <!-- 配置spring创建容器时要扫描的包 -->
     <context:component-scan base-package="com.cc.springMVC">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
@@ -38,7 +45,8 @@
     <mvc:resources mapping="/static/**" location="/static/"/>
     <!--//忽略上传的静态,不经过DispatchServlet-->
     <mvc:resources mapping="/uploads/**" location="/ssm/uploads/"/>
-    <!--配置文件解析器-->
+
+
 
 
 </beans>

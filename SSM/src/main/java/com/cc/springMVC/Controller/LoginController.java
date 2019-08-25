@@ -30,13 +30,15 @@ public class LoginController {
     @GetMapping("to")
     public String toLogin(HttpServletRequest request){
         //验证是否登录成功
-        Cookie[] cookies = request.getCookies();
-        for (Cookie cookie : cookies) {
-            if(cookie.getName().equals("have_login_success")){
-                if(cookie.getValue().equals("true"))
-                    return "redirect:/User/findAll";
-            }
-        }
+//        Cookie[] cookies = request.getCookies();
+//        for (Cookie cookie : cookies) {
+//            if(cookie!=null){
+//                if(cookie.getName().equals("have_login_success")){
+//                    if(cookie.getValue().equals("true"))
+//                        return "redirect:/User/findAll";
+//                }
+//            }
+//        }
         //没有成功回到正常登录页面
         return "login/login";
     }
